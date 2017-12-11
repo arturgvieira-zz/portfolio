@@ -9,6 +9,7 @@
     background: #0069c0;
     color: white;
     border: 1px solid #bcbcbc;
+    cursor: pointer;
 }
 
 .App .card {

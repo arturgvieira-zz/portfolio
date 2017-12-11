@@ -1,9 +1,9 @@
 .Breadcrumbs {
-    width: 100%;
+    width: 90%;
 }
 
 .Breadcrumbs .part {
     text-decoration: none;
-    padding: 5px;
+    padding: 5px 15px;
     font-size: 0.8em;
 }

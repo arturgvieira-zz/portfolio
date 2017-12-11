@@ -1,11 +1,14 @@
 .Toolbar {
     flex-grow: 1;
-    height: 50px;
 }
 
 .Toolbar .wrapper {
     display: grid;
-    grid-template-columns: 30% 60% 10%;
+    grid-template-columns: 5% 37.5% 52.5% 10%;
     grid-template-rows: 50px;
+}
+
+.Toolbar .wrapper .menu {
+    padding: 5px 14px;
 }
 
