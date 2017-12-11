@@ -7,7 +7,7 @@ class Dashboard extends Component {
       <div className="Dashboard">
         <div className="button" >
           <p className="quiet" 
-             onClick={this.props.handleClick}>Toggle Quiet Mode</p>
+             onClick={this.props.handleClick}>Quiet Mode</p>
         </div>
       </div>
     );
