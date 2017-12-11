@@ -28,7 +28,7 @@ class App extends Component {
     );
     
     const snippet = (
-        <div className="title embossed"><h4>Portfolio</h4></div>
+      <div className="title embossed"><h4>Portfolio</h4></div>
     );
     
     return (
