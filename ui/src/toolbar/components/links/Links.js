@@ -6,8 +6,8 @@ class Links extends Component {
     return (
       <div className="Links">
         <span className="item"><a href="https://portfolio.arturgvieira.com">Home</a></span>
-        <span className="item"><a href="https://arturgvieira.com">Website</a></span>
-        <span className="item"><a href="https://arturgvieira.quip.com">Hire</a></span>
+        <span className="item"><a href="https://arturgvieira.com" target="_blank">Website</a></span>
+        <span className="item"><a href="https://arturgvieira.quip.com" target="_blank">Hire</a></span>
       </div>
     );
   }
