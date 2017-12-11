@@ -5,7 +5,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <div className="card">Nav</div>
+        <div className="projects card">Projects</div>
       </div>
     );
   }
