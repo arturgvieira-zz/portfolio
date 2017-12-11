@@ -8,7 +8,7 @@ class User extends Component {
   render() {
     return (
       <div className="User">
-        <nav className="card">
+        <nav>
           <section className="wrapper">
             <Options />
             <Account />

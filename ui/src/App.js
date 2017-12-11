@@ -21,11 +21,12 @@ class App extends Component {
   render() {
     
     const header = (
-      <header className="header container">
-        <nav className="nav card">
-          <span className="title"><h2>Portfolio</h2></span> <Breadcrumbs />
+      <header className="header container card">
+        <nav className="nav">
+          <span className="title"><h2>Portfolio</h2></span>
         </nav>
         <User />
+        <Breadcrumbs />
       </header>
     );
     
