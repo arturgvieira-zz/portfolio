@@ -1,7 +1,7 @@
 .App {
     max-width: 1500px;
     min-width: 300px;
-    margin: 0 auto;
+    margin: 105px auto;
 }
 
 .App .button {
@@ -30,6 +30,9 @@
 }
 
 .App .header {
+    position: absolute;
+    top: 0;
+    width: 100%;
     padding: 15px 10px;
     background: white;
     border-bottom: 2px solid #0069c0;
@@ -63,6 +66,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .App {
+        margin: 82px auto;
+    }
+    
     .App .breadcrumbs {
         display: none;
     }
