@@ -23,7 +23,7 @@ class App extends Component {
     const header = (
       <header className="header container">
         <Toolbar />
-        <Breadcrumbs />
+        <span className="breadcrumbs"><Breadcrumbs /></span>
       </header>
     );
     

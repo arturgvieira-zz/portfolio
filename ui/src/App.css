@@ -60,3 +60,9 @@
 .App .wrapper .view {
     grid-area: v;
 }
+
+@media screen and (max-width: 500px) {
+    .App .breadcrumbs {
+        display: none;
+    }
+}
