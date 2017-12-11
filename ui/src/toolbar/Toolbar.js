@@ -12,7 +12,7 @@ class Toolbar extends Component {
         <nav>
           <section className="wrapper">
             <div className="menu">
-              <a href="javascript:void()"><img src={Menu} alt="Menu" /></a>
+              <img src={Menu} alt="Menu" />
             </div>
             <Title />
             <Links />
