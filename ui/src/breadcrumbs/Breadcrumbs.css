@@ -2,3 +2,6 @@
     width: 100%;
 }
 
+.Breadcrumbs .part {
+    text-decoration: none;
+}

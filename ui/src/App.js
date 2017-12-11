@@ -23,7 +23,7 @@ class App extends Component {
     const header = (
       <header className="header container card">
         <nav className="nav">
-          <span className="title"><h2>Portfolio</h2></span>
+          <h2 className="title">Portfolio</h2>
         </nav>
         <User />
         <Breadcrumbs />

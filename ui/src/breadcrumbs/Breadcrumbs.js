@@ -5,7 +5,7 @@ class Breadcrumbs extends Component {
   render() {
     return (
       <div className="Breadcrumbs">
-        <p>Breadcrumbs</p>
+        <a className="part" href="portfolio.arturgvieira.com"><h4>Home</h4></a> 
       </div>
     );
   }

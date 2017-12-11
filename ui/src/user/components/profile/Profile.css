@@ -1,0 +1,12 @@
+.Profile {
+    
+}
+
+.Profile .portrait {
+    background: url('./profile.png') #bcbcbc no-repeat center bottom;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    border: 1px solid #eee;
+}

@@ -1,11 +1,11 @@
 .User {
-    flex-grow: 3;
+    flex-grow: 1;
     height: 50px;
 }
 
 .User .wrapper {
     display: grid;
-    grid-template-columns: 60% 20% 20%;
+    grid-template-columns: 80% 20%;
     grid-template-rows: 50px;
 }
 

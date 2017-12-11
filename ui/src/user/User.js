@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './User.css';
-import Options from './components/options/Options.js';
 import Account from './components/account/Account.js';
 import Profile from './components/profile/Profile.js';
 
@@ -10,7 +9,6 @@ class User extends Component {
       <div className="User">
         <nav>
           <section className="wrapper">
-            <Options />
             <Account />
             <Profile />
           </section>
