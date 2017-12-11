@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Breadcrumbs from './breadcrumbs/Breadcrumbs.js';
-import User from './user/User.js';
+import Toolbar from './toolbar/Toolbar.js';
 import View from './view/View.js';
 import Dashboard from './dashboard/Dashboard.js';
 import Nav from './nav/Nav.js';
@@ -22,10 +22,7 @@ class App extends Component {
     
     const header = (
       <header className="header container card">
-        <nav className="nav">
-          <h2 className="title">Portfolio</h2>
-        </nav>
-        <User />
+        <Toolbar />
         <Breadcrumbs />
       </header>
     );
@@ -40,14 +37,10 @@ class App extends Component {
         <main className="wrapper">
             <aside className="dashboard">
               <Dashboard handleClick={this.handleChange}/>
+              <Nav />
             </aside>
             <section className="content">
-              <article className="navigation">
-                <Nav />
-              </article>
-              <article className="view">  
-                <View />
-              </article>
+              <View />
             </section>
         </main>
       </div>

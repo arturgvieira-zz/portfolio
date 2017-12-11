@@ -6,6 +6,7 @@ class View extends Component {
     return (
       <div className="View">
         <div className="card">View</div>
+        
       </div>
     );
   }

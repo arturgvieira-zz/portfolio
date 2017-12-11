@@ -31,10 +31,6 @@
     flex-wrap: wrap;
 }
 
-.App .container .nav {
-    flex-grow: 3;
-}
-
 .App .wrapper {
     display: grid;
     grid-template-columns: 15% 85%;

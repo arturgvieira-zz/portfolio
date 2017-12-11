@@ -1,11 +1,11 @@
-.User {
+.Toolbar {
     flex-grow: 1;
     height: 50px;
 }
 
-.User .wrapper {
+.Toolbar .wrapper {
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 35% 60% 5%;
     grid-template-rows: 50px;
 }
 

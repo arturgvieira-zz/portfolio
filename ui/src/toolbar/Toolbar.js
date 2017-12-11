@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import './User.css';
-import Account from './components/account/Account.js';
+import './Toolbar.css';
+import Title from './components/title/Title.js';
+import Links from './components/links/Links.js';
 import Profile from './components/profile/Profile.js';
 
-class User extends Component {
+class Toolbar extends Component {
   render() {
     return (
-      <div className="User">
+      <div className="Toolbar">
         <nav>
           <section className="wrapper">
-            <Account />
+            <Title />
+            <Links />
             <Profile />
           </section>
         </nav>
@@ -18,4 +20,4 @@ class User extends Component {
   }
 }
 
-export default User;
+export default Toolbar;
