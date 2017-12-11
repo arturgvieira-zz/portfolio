@@ -2,7 +2,6 @@
     max-width: 1500px;
     min-width: 300px;
     margin: 0 auto;
-    margin-top: 105px;
 }
 
 .App .button {
@@ -31,16 +30,18 @@
 }
 
 .App .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     padding: 15px 10px;
     background: white;
     border-bottom: 2px solid #0069c0;
 }
 
-.App .wrapper {
+.App > .wrapper {
+    position:absolute;
+    top: 105px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow-y:scroll;  
     display: grid;
     grid-template-columns: 15% 85%;
     grid-template-rows: 50px 500px;
@@ -68,15 +69,12 @@
 }
 
 @media screen and (max-width: 500px) {
-    .App {
-        margin: 82px auto;
-    }
-    
     .App .breadcrumbs {
         display: none;
     }
     
     .App .wrapper {
+        top: 82px;
         display: flex;
         flex-wrap: wrap;
     }
