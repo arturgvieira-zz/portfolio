@@ -38,10 +38,10 @@
 .App .wrapper {
     display: grid;
     grid-template-columns: 15% 85%;
-    grid-template-rows: 50px;
+    grid-template-rows: 50px 500px;
     grid-template-areas:
         "d v"
-        "n v"
+        "n v";
 }
 
 .App .wrapper .dashboard {
@@ -56,8 +56,31 @@
     grid-area: v;
 }
 
+@media screen and (max-width: 1000px) {
+    .App .wrapper {
+        grid-template-columns: 35% 65%;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .App .breadcrumbs {
         display: none;
+    }
+    
+    .App .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .App .wrapper .dashboard {
+        width: 100%;
+    }
+    
+    .App .wrapper .navigation {
+        width: 100%;
+    }
+    
+    .App .wrapper .view {
+        width: 100%;
     }
 }

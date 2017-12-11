@@ -37,9 +37,9 @@ class App extends Component {
         <main className="wrapper">
             <aside className="dashboard">
               <Dashboard handleClick={this.handleChange}/>
-              <Nav />
+              <div className="navigation"><Nav /></div>
             </aside>
-            <section className="content">
+            <section className="view">
               <View />
             </section>
         </main>
