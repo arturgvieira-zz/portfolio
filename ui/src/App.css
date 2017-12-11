@@ -45,8 +45,8 @@
     grid-template-columns: 15% 85%;
     grid-template-rows: 50px;
     grid-template-areas:
-        "d n"
         "d v"
+        "n v"
 }
 
 .App .wrapper .dashboard {

@@ -4,9 +4,9 @@ import './Profile.css';
 class Profile extends Component {
   render() {
     return (
-      <div className="Profile">
+      <span className="Profile">
         <div className="portrait"></div>
-      </div>
+      </span>
     );
   }
 }

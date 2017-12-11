@@ -4,11 +4,13 @@ import './Links.css';
 class Links extends Component {
   render() {
     return (
-      <div className="Links">
-        <span className="item"><a href="https://portfolio.arturgvieira.com">Home</a></span>
-        <span className="item"><a href="https://arturgvieira.com" rel="noopener noreferrer" target="_blank">Website</a></span>
-        <span className="item"><a href="https://arturgvieira.quip.com" rel="noopener noreferrer" target="_blank">Hire</a></span>
-      </div>
+      <span className="Links">
+        <ul>
+          <li><a className="item" href="https://portfolio.arturgvieira.com">Home</a></li>
+          <li><a className="item" href="https://arturgvieira.com" rel="noopener noreferrer" target="_blank">Website</a></li>
+          <li><a className="item" href="https://arturgvieira.quip.com" rel="noopener noreferrer" target="_blank">Hire</a></li>
+        </ul>
+      </span>
     );
   }
 }

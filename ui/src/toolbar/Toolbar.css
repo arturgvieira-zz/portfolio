@@ -4,7 +4,7 @@
 
 .Toolbar .wrapper {
     display: grid;
-    grid-template-columns: 5% 37.5% 52.5% 5%;
+    grid-template-columns: 68px 37.5% 47.5% 10%;
     grid-template-rows: 50px;
 }
 
@@ -12,3 +12,35 @@
     padding: 5px 14px;
 }
 
+@media screen and (max-width: 1000px) {
+    .Toolbar .wrapper {
+        display: grid;
+        grid-template-columns: 68px 75% 10%;
+        grid-template-rows: 50px;
+    }
+    
+    .Toolbar .links {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Toolbar .wrapper {
+        display: grid;
+        grid-template-columns: 68px 30% 30% 30%;
+        grid-template-rows: 50px 50px;
+    }
+    
+    .Toolbar .title {
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+    .Toolbar .profile {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        margin: 0 auto;
+    }
+}

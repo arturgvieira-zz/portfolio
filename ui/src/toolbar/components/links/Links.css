@@ -1,16 +1,16 @@
 .Links {
-    
+}
+
+.Links ul li {
+    display: inline-block;
 }
 
 .Links .item {
-    margin: 15px 25px;
-}
-
-.Links .item a {
+    margin: 0 25px;
     text-decoration: none;
     color: inherit;
 }
 
 .Links .item a:visited {
-    
+    color: inherit;
 }

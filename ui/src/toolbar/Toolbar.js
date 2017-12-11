@@ -9,16 +9,14 @@ class Toolbar extends Component {
   render() {
     return (
       <div className="Toolbar">
-        <nav>
-          <section className="wrapper">
-            <div className="menu">
-              <img src={Menu} alt="Menu" />
-            </div>
-            <Title />
-            <Links />
-            <Profile />
-          </section>
-        </nav>
+        <section className="wrapper">
+          <span className="menu">
+            <img src={Menu} alt="Menu" />
+          </span>
+          <span className="title"><Title/></span>
+          <span className="links"><Links/></span>
+          <span className="profile"><Profile/></span>
+        </section>
       </div>
     );
   }
