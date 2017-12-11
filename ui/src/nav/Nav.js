@@ -4,9 +4,11 @@ import './Nav.css';
 class Nav extends Component {
   render() {
     return (
-      <span className="Nav">
+      <div className="Nav">
         <p className="projects card">Projects</p>
-      </span>
+        <p className="card">Frameworks</p>
+        <p className="card">Languages</p>
+      </div>
     );
   }
 }
