@@ -5,8 +5,7 @@ class View extends Component {
   render() {
     return (
       <div className="View">
-        <div className="card">View</div>
-        
+        <p className="card">Under Construction</p>
       </div>
     );
   }
