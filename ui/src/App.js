@@ -11,13 +11,14 @@ class App extends Component {
     super(props);
     this.state = {
       quiet: false,
+      hidden: true,
     };
   }
   
   handleChange = () => {
     this.setState({ quiet: !this.state.quiet });
   }
-  
+
   render() {
     
     const header = (
@@ -35,11 +36,13 @@ class App extends Component {
       <div className="App">
         {this.state.quiet ? snippet : header}
         <main className="wrapper">
+          <section className="panel">
             <aside className="dashboard">
               <Dashboard handleClick={this.handleChange}/>
             </aside>
             <div className="navigation"><Nav /></div>
-            <section className="view"><View /></section>
+          </section>
+          <section className="view"><View /></section>
         </main>
       </div>
     );

@@ -79,11 +79,7 @@
         flex-wrap: wrap;
     }
     
-    .App .wrapper .dashboard {
-        width: 100%;
-    }
-    
-    .App .wrapper .navigation {
+    .App .wrapper .panel {
         width: 100%;
     }
     

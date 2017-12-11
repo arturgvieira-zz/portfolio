@@ -1,8 +1,9 @@
 .Links {
+
 }
 
 .Links ul li {
-    display: inline-block;
+    display: inline;
 }
 
 .Links .item {
