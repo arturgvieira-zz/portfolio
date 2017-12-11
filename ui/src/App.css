@@ -35,6 +35,61 @@
     border-bottom: 2px solid #0069c0;
 }
 
+.App .drawer .panel{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-shrink: 0;
+    color: #424242;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 10px;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+.App .drawer .container{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-shrink: 0;
+    color: #424242;
+    width: 240px;
+    background-color: white;
+}
+
+.App .drawer .heading {
+    padding: 8px 8px 16px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.App .drawer .links {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.1s;
+}
+
+.App .drawer .links:hover {
+    background-color: #f1f1f1;
+}
+
 .App > .wrapper {
     position:absolute;
     top: 105px;
@@ -81,6 +136,10 @@
     
     .App .wrapper .panel {
         width: 100%;
+    }
+    
+    .App .wrapper .panel .navigation {
+        display: none;
     }
     
     .App .wrapper .view {

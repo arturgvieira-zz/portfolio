@@ -5,9 +5,11 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <p className="projects card">Projects</p>
-        <p className="card">Frameworks</p>
-        <p className="card">Languages</p>
+        <div className="card">
+          <p>Projects</p>
+          <p>Frameworks</p>
+          <p>Languages</p>
+        </div>
       </div>
     );
   }
