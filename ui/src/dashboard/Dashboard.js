@@ -4,11 +4,11 @@ import './Dashboard.css';
 class Dashboard extends Component {
   render() {
     return (
-      <div className="Dashboard">
+      <span className="Dashboard">
         <div className="button" onClick={this.props.handleClick}>
           <p className="quiet">Quiet Mode</p>
         </div>
-      </div>
+      </span>
     );
   }
 }

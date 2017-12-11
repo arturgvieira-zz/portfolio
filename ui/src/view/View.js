@@ -4,9 +4,9 @@ import './View.css';
 class View extends Component {
   render() {
     return (
-      <div className="View">
+      <span className="View">
         <p className="card">Under Construction</p>
-      </div>
+      </span>
     );
   }
 }

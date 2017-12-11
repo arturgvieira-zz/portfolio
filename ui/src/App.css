@@ -40,7 +40,6 @@
     top: 105px;
     left:0px;
     right:0px;
-    bottom:0px;
     overflow-y:scroll;  
     display: grid;
     grid-template-columns: 15% 85%;
