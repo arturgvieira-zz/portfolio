@@ -4,4 +4,6 @@
 
 .Breadcrumbs .part {
     text-decoration: none;
+    padding: 5px;
+    font-size: 0.8em;
 }
