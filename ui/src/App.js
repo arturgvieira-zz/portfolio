@@ -23,14 +23,14 @@ class App extends Component {
     const header = (
       <header className="header container">
         <nav className="nav card">
-          <div className="title"><p>Title</p></div><Breadcrumbs />
+          <span className="title"><h2>Portfolio</h2></span> <Breadcrumbs />
         </nav>
         <User />
       </header>
     );
     
     const snippet = (
-        <div className="title small-card"><p>Title</p></div>
+        <div className="title embossed"><h4>Portfolio</h4></div>
     );
     
     return (
