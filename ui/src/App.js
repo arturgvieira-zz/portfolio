@@ -6,7 +6,8 @@ import View from './view/View.js';
 import Dashboard from './dashboard/Dashboard.js';
 import Nav from './nav/Nav.js';
 
-import fetch from 'node-fetch';
+import 'es6-promise';
+import fetch from 'isomorphic-fetch';
 
 class App extends Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.endpoint(this.state.url);
+    this.endpoint();
   }
 
   render() {
