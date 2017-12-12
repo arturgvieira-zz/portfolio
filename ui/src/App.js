@@ -74,7 +74,7 @@ class App extends Component {
           style={div}
           key={el} 
           onClick={() => this.handleRequest((obj.title + "/" + el).toLowerCase())}>
-            <a href="#view">{el}</a>
+            {el}
           </div>
         )
       );
@@ -125,7 +125,6 @@ class App extends Component {
             <div className="navigation"><Nav load={this.load} nav={this.state.nav} /></div>
           </section>
           <section className="view card">
-            <a name="view"> </a>
             <View load={this.load} view={this.state.view} />
           </section>
         </main>
