@@ -2,6 +2,11 @@
     
 }
 
+.Nav .container {
+    display: flex;
+    flex-direction: column;
+}
+
 .Nav .item {
     display: block;
     cursor: pointer;
@@ -11,5 +16,6 @@
 
 .Nav .item:hover {
     background: #f1f1f1;
+    padding-bottom: 4px;
     border-bottom: 1px solid #0069c0;
 }

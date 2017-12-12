@@ -11,15 +11,9 @@ class Nav extends Component {
     return (
       <div className="Nav">
         <div className="container">
-          <div className="item">
-            <p onClick={() => this.handleClick("projects")}>Projects</p>
-          </div>
-          <div className="item">
-            <p onClick={() => this.handleClick("frameworks")}>Frameworks</p>
-          </div>
-          <div className="item">
-            <p onClick={() => this.handleClick("languages")}>Languages</p>
-          </div>
+          <div className="item" onClick={() => this.handleClick("projects")}>Projects</div>
+          <div className="item" onClick={() => this.handleClick("frameworks")}>Frameworks</div>
+          <div className="item" onClick={() => this.handleClick("languages")}>Languages</div>
         </div>
       </div>
     );
