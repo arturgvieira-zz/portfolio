@@ -20,7 +20,7 @@ class App extends Component {
     };
   }
     
-  handleChange = (e) => {
+  handleRequest = (e) => {
     this.endpoint(this.state.url + e);
   }
 
@@ -74,9 +74,9 @@ class App extends Component {
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
           <span className="heading">Dashboard</span>
-          <a className="links" href="#projects">Projects</a>
-          <a className="links" href="#frameworks">Frameworks</a>
-          <a className="links" href="#languages">Languages</a>
+          <a className="links" href="#projects" onClick={() => this.handleRequest('projects')}>Projects</a>
+          <a className="links" href="#frameworks" onClick={() => this.handleRequest('frameworks')}>Frameworks</a>
+          <a className="links" href="#languages" onClick={() => this.handleRequest('languages')}>Languages</a>
         </section>
       </div>
     );
@@ -90,7 +90,7 @@ class App extends Component {
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>
             </div>
-            <div className="navigation"><Nav handleChange={this.handleChange} /></div>
+            <div className="navigation"><Nav handleRequest={this.handleRequest} /></div>
           </section>
           <section className="view card">
             <View message={this.state.view} />

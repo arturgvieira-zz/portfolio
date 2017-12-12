@@ -4,7 +4,7 @@ import './Nav.css';
 class Nav extends Component {
   
   handleClick = (e) => {
-    this.props.handleChange(e);
+    this.props.handleRequest(e);
   }
   
   render() {
