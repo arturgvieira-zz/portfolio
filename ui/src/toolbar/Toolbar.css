@@ -10,6 +10,7 @@
 
 .Toolbar .wrapper .menu {
     padding: 5px 14px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
