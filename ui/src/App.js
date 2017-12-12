@@ -62,6 +62,7 @@ class App extends Component {
       cursor: 'pointer',
       margin: '15px',
       padding: '5px 15px',
+      color: '#2196f3',
     };
     
     if(obj){
