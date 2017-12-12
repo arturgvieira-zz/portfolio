@@ -5,10 +5,8 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <div className="card">
-          <p>Projects</p>
-          <p>Frameworks</p>
-          <p>Languages</p>
+        <div className="panel">
+          <div className="item"><p>Projects</p></div>
         </div>
       </div>
     );

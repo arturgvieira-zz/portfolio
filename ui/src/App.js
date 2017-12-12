@@ -48,7 +48,7 @@ class App extends Component {
           <a className="links" href="https://portfolio.arturgvieira.com">Home</a>
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
-          <h3 className="heading">Menu</h3>
+          <h3 className="heading">Dashboard</h3>
           <a className="links" href="#projects">Projects</a>
           <a className="links" href="#frameworks">Frameworks</a>
           <a className="links" href="#languages">Languages</a>
@@ -61,10 +61,10 @@ class App extends Component {
         {this.state.quiet ? snippet : header}
         {this.state.hidden ? null : drawer}
         <main className="wrapper">
-          <section className="panel">
-            <aside className="dashboard">
+          <section className="panel card">
+            <div className="dashboard">
               <Dashboard handleClick={this.handleChange}/>
-            </aside>
+            </div>
             <div className="navigation"><Nav /></div>
           </section>
           <section className="view"><View /></section>
