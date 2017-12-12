@@ -118,8 +118,8 @@
     }
     
     .App > .wrapper > .view {
-        width: 57.5%;
-        margin-left: 40%;
+        width: 52.5%;
+        margin-left: 42.5%;
     }
 }
 
@@ -144,6 +144,9 @@
     }
     
     .App > .wrapper > .view {
-        width: 100%;
+        margin: 15px;
+        margin-top: 125px;
+        width: 95%;
+        float: none;
     }
 }
