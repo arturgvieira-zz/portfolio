@@ -5,7 +5,7 @@ class View extends Component {
   render() {
     return (
       <span className="View">
-        <p>{this.props.message}</p>
+        <h2>{this.props.message}</h2>
       </span>
     );
   }

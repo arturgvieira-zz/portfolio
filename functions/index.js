@@ -17,9 +17,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', function(req, res){
-    
-    
-    // Get a database reference to our posts
+    // Get a database reference
     var db = admin.database();
     var ref = db.ref("welcome");
     ref.once("value", function(data) {
@@ -28,15 +26,30 @@ app.get('/', function(req, res){
 });
 
 app.get('/projects', function(req, res){
-    res.json({ message: 'Hello, this is the Projects Endpoint.'});
+    // Get a database reference
+    var db = admin.database();
+    var ref = db.ref("portfolio/projects/title");
+    ref.once("value", function(data) {
+      res.json({ message: data});
+    });
 });
 
 app.get('/frameworks', function(req, res){
-    res.json({ message: 'Hello, this is the Frameworks Endpoint.'});
+    // Get a database reference
+    var db = admin.database();
+    var ref = db.ref("portfolio/frameworks/title");
+    ref.once("value", function(data) {
+      res.json({ message: data});
+    });
 });
 
 app.get('/languages', function(req, res){
-    res.json({ message: 'Hello, this is the Languages Endpoint.'});
+    // Get a database reference
+    var db = admin.database();
+    var ref = db.ref("portfolio/languages/title");
+    ref.once("value", function(data) {
+      res.json({ message: data});
+    });
 });
 
 const api = functions.https.onRequest(app);
