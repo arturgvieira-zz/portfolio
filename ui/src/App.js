@@ -45,7 +45,7 @@ class App extends Component {
       })
       .then(json => {
         if(!this.state.nav){
-          this.setState({ view: json, nav: json });
+          this.setState({ nav: json });
         }else {
           this.setState({ view: json });
         }
