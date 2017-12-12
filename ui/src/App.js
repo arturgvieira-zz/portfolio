@@ -42,7 +42,7 @@ class App extends Component {
         return response.json();
       })
       .then(json => {
-        this.setState({ view: json.message });
+        this.setState({ view: json });
       })
       .catch(error => {
         this.setState({ view: "Something went wrong. Please try again later." });
@@ -93,7 +93,7 @@ class App extends Component {
             <div className="navigation"><Nav handleRequest={this.handleRequest} /></div>
           </section>
           <section className="view card">
-            <View message={this.state.view} />
+            <View view={this.state.view} />
           </section>
         </main>
       </div>

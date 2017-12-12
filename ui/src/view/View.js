@@ -3,12 +3,10 @@ import './View.css';
 
 class View extends Component {
   render() {
-    return (
-      <span className="View">
-        <h2>{this.props.message.title}</h2>
-        
-      </span>
-    );
+    return this.props.view ?  
+      (<h3>{this.props.view.title}</h3>)
+    :
+      (<h3>Welcome</h3>);
   }
 }
 
