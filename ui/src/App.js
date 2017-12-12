@@ -23,7 +23,7 @@ class App extends Component {
   }
     
   handleRequest = (e) => {
-    this.endpoint(this.state.default + e);
+    this.endpoint(this.state.default + 'data/' + e);
   }
 
   handleQuiet = () => {
@@ -53,6 +53,34 @@ class App extends Component {
       .catch(error => {
         this.setState({ view: "Something went wrong. Please try again later." });
     });
+  }
+  
+  load = (obj) => {
+    const temp = [];
+    
+    const div = {
+      cursor: 'pointer',
+      margin: '10px',
+      padding: '5px 10px',
+    };
+    
+    if(obj){
+      Object.entries(obj.data).forEach(([key, value]) => {
+        temp.push(value.title);
+      });
+      return temp.map( el => 
+        (
+          <div
+          style={div}
+          key={el} 
+          onClick={() => this.handleRequest((obj.title + "/" + el).toLowerCase())}>
+            <a href="#view">{el}</a>
+          </div>
+        )
+      );
+    }else {
+      return null;
+    }
   }
   
   componentDidMount() {
@@ -92,11 +120,11 @@ class App extends Component {
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>
             </div>
-            <div className="navigation"><Nav view={this.state.nav} handleRequest={this.handleRequest} /></div>
+            <div className="navigation"><Nav load={this.load} nav={this.state.nav} /></div>
           </section>
           <section className="view card">
             <a name="view"> </a>
-            <View view={this.state.view} />
+            <View load={this.load} view={this.state.view} />
           </section>
         </main>
       </div>

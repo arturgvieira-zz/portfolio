@@ -25,10 +25,11 @@ app.get('/', function(req, res){
     });
 });
 
-app.get('/data/:param', function(req, res){
+app.get('/data/:parent/:child', function(req, res){
+    const struct = req.params.parent != 'portfolio' ? 'portfolio/data/' + req.params.parent : req.params.parent;
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/data/" + req.params.param);
+    var ref = db.ref(struct + "/data/" + req.params.child);
     ref.once("value", function(data) {
       res.json(data);
     });
