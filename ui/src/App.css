@@ -75,6 +75,7 @@
     color: #818181;
     display: block;
     transition: 0.1s;
+    cursor: pointer;
 }
 
 .App .drawer .links:hover {
