@@ -1,6 +1,5 @@
 .App {
     max-width: 1500px;
-    min-width: 300px;
     margin: 0 auto;
 }
 
@@ -30,7 +29,7 @@
 }
 
 .App .header {
-    padding: 15px 10px;
+    padding: 5px 10px;
     background: white;
     border-bottom: 2px solid #0069c0;
 }
@@ -42,37 +41,28 @@
     z-index: 1;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex-shrink: 0;
-    color: #424242;
     background-color: rgba(0,0,0,0.4);
-    padding-top: 10px;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
 }
 
 .App .drawer .container{
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    flex-shrink: 0;
     color: #424242;
     width: 240px;
     background-color: white;
 }
 
 .App .drawer .heading {
-    padding: 8px 8px 16px 32px;
+    padding: 16px 8px 16px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #818181;
     display: block;
 }
@@ -80,7 +70,7 @@
 .App .drawer .links {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 15px;
     color: #818181;
     display: block;
     transition: 0.1s;
@@ -90,16 +80,16 @@
     background-color: #f1f1f1;
 }
 
-.App > .wrapper {
+.App .content {
     position:absolute;
-    top: 105px;
+    top: 120px;
     left:0px;
     right:0px;
     bottom: 0px;
     overflow-y:scroll;
 }
 
-.App > .wrapper > .panel {
+.App .content .panel {
     position: fixed;
     height: 400px;
     width: 25%;
@@ -107,18 +97,18 @@
     border-left: 4px solid #555;
 }
 
-.App > .wrapper > .view {
-    width: 67.5%;
+.App .content .view {
+    display: flex;
+    align-items: flex-end;
     margin-left: 30%;
 }
 
 @media screen and (max-width: 1000px) {
-    .App > .wrapper > .panel {
+    .App .content .panel {
         width: 35%;
     }
     
-    .App > .wrapper > .view {
-        width: 52.5%;
+    .App .content .view {
         margin-left: 42.5%;
     }
 }
@@ -128,25 +118,11 @@
         display: none;
     }
     
-    .App > .wrapper {
-        top: 82px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .App > .wrapper > .panel {
-        width: 90%;
-        height: 75px;
-    }
-    
-    .App > .wrapper > .panel .navigation {
+    .App .content .panel {
         display: none;
     }
     
-    .App > .wrapper > .view {
-        margin: 15px;
-        margin-top: 125px;
-        width: 95%;
-        float: none;
+    .App .content .view {
+        margin: 5px;
     }
 }

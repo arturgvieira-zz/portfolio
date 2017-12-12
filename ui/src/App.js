@@ -69,11 +69,11 @@ class App extends Component {
       <div className="drawer">
         <div className="panel" onClick={this.handleClickAway}></div>
         <section className="container">
-          <h3 className="heading">Portfolio</h3>
+          <span className="heading">Portfolio</span>
           <a className="links" href="https://portfolio.arturgvieira.com">Home</a>
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
-          <h3 className="heading">Dashboard</h3>
+          <span className="heading">Dashboard</span>
           <a className="links" href="#projects">Projects</a>
           <a className="links" href="#frameworks">Frameworks</a>
           <a className="links" href="#languages">Languages</a>
@@ -85,14 +85,16 @@ class App extends Component {
       <div className="App">
         {this.state.quiet ? snippet : header}
         {this.state.hidden ? null : drawer}
-        <main className="wrapper">
+        <main className="content">
           <section className="panel card">
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>
             </div>
             <div className="navigation"><Nav handleChange={this.handleChange} /></div>
           </section>
-          <section className="view card"><View message={this.state.view} /></section>
+          <section className="view card">
+            <View message={this.state.view} />
+          </section>
         </main>
       </div>
     );

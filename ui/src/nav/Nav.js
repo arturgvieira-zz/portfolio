@@ -10,7 +10,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <div className="panel">
+        <div className="container">
           <div className="item">
             <p onClick={() => this.handleClick("projects")}>Projects</p>
           </div>

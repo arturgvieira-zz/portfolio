@@ -4,9 +4,11 @@ import './Breadcrumbs.css';
 class Breadcrumbs extends Component {
   render() {
     return (
-      <span className="Breadcrumbs">
-        <span><a className="part" href="https://portfolio.arturgvieira.com">Home</a></span>
-      </span>
+      <div className="Breadcrumbs">
+        <div className="container">
+          <a className="part" href="https://portfolio.arturgvieira.com">Home</a>
+        </div>
+      </div>
     );
   }
 }

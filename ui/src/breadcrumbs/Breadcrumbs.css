@@ -2,8 +2,12 @@
     width: 90%;
 }
 
+.Breadcrumbs .container {
+    display: flex;
+    padding: 5px 20px;
+}
+
 .Breadcrumbs .part {
     text-decoration: none;
-    padding: 5px 15px;
-    font-size: 0.8em;
+    font-size: 0.75em;
 }

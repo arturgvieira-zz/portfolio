@@ -2,18 +2,14 @@
     
 }
 
-.Nav .panel {
-    margin: 1px;
-}
-
-.Nav .panel .item {
+.Nav .item {
     display: block;
     cursor: pointer;
     margin: 10px;
     padding: 5px 15px;
 }
 
-.Nav .panel .item:hover {
+.Nav .item:hover {
     background: #f1f1f1;
     border-bottom: 1px solid #0069c0;
 }
