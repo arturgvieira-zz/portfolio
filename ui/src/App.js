@@ -6,7 +6,7 @@ import View from './view/View.js';
 import Dashboard from './dashboard/Dashboard.js';
 import Nav from './nav/Nav.js';
 
-import 'whatwg-fetch';
+import fetch from 'node-fetch';
 
 class App extends Component {
   constructor(props) {
@@ -14,24 +14,17 @@ class App extends Component {
     this.state = {
       quiet: false,
       hidden: true,
+      url: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
       view: null,
     };
   }
-  
-  endpoint = () => {
-    fetch('https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/')
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        this.setState({ view: json.message });
-      })
-      .catch(error => {
-        this.setState({ view: "Something went wrong. Please try again later." });
-    });
+    
+  handleChange = (e) => {
+    this.setState({ url: this.state.url + e });
+    this.endpoint();
   }
-  
-  handleChange = () => {
+
+  handleQuiet = () => {
     this.setState({ quiet: !this.state.quiet });
   }
 
@@ -43,8 +36,21 @@ class App extends Component {
     this.setState({ hidden: true });
   }
 
+  endpoint = () => {
+    fetch(this.state.url)
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        this.setState({ view: json.message });
+      })
+      .catch(error => {
+        this.setState({ view: "Something went wrong. Please try again later." });
+    });
+  }
+  
   componentDidMount() {
-    this.endpoint();
+    this.endpoint(this.state.url);
   }
 
   render() {
@@ -82,9 +88,9 @@ class App extends Component {
         <main className="wrapper">
           <section className="panel card">
             <div className="dashboard">
-              <Dashboard handleClick={this.handleChange}/>
+              <Dashboard handleClick={this.handleQuiet}/>
             </div>
-            <div className="navigation"><Nav /></div>
+            <div className="navigation"><Nav handleChange={this.handleChange} /></div>
           </section>
           <section className="view card"><View message={this.state.view} /></section>
         </main>

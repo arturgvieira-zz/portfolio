@@ -3,14 +3,16 @@ import './Nav.css';
 
 class Nav extends Component {
   
+  handleClick = (e) => {
+    this.props.handleChange(e);
+  }
   
   render() {
     return (
       <div className="Nav">
         <div className="panel">
           <div className="item">
-            <p>Projects</p>
-            
+            <p onClick={() => this.handleClick("projects")}>Projects</p>
           </div>
         </div>
       </div>
