@@ -8,7 +8,7 @@ class View extends Component {
         <div className="display">
           <h3>{this.props.view.title}</h3>
           <p>{this.props.view.welcome}</p>
-          {this.props.view.data != 'null' ? this.props.load(this.props.view) : null}
+          {this.props.view.data !== 'null' ? this.props.load(this.props.view) : null}
         </div>
       )
     :
