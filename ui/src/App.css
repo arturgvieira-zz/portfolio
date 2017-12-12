@@ -124,12 +124,7 @@
     }
     
     .App .content .panel {
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        position: static;
-        margin: 5px;
+        display:none;
     }
     
     .App .content .view {

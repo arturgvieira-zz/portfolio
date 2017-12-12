@@ -60,8 +60,8 @@ class App extends Component {
     
     const div = {
       cursor: 'pointer',
-      margin: '10px',
-      padding: '5px 10px',
+      margin: '15px',
+      padding: '5px 15px',
     };
     
     if(obj){
@@ -107,6 +107,8 @@ class App extends Component {
           <a className="links" href="https://portfolio.arturgvieira.com">Home</a>
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
+          <span className="heading"><h3>Dashboard</h3></span>
+          {this.load(this.state.nav)}
         </section>
       </div>
     );
