@@ -74,9 +74,9 @@ class App extends Component {
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
           <span className="heading">Dashboard</span>
-          <a className="links" href="#projects" onClick={() => this.handleRequest('projects')}>Projects</a>
-          <a className="links" href="#frameworks" onClick={() => this.handleRequest('frameworks')}>Frameworks</a>
-          <a className="links" href="#languages" onClick={() => this.handleRequest('languages')}>Languages</a>
+          <span className="links" onClick={() => this.handleRequest('projects')}>Projects</span>
+          <span className="links" onClick={() => this.handleRequest('frameworks')}>Frameworks</span>
+          <span className="links" onClick={() => this.handleRequest('languages')}>Languages</span>
         </section>
       </div>
     );

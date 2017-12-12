@@ -57,6 +57,7 @@
     color: #424242;
     width: 240px;
     background-color: white;
+    overflow-y: auto;
 }
 
 .App .drawer .heading {
