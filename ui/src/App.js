@@ -67,7 +67,7 @@ class App extends Component {
             </div>
             <div className="navigation"><Nav /></div>
           </section>
-          <section className="view"><View /></section>
+          <section className="view card"><View /></section>
         </main>
       </div>
     );

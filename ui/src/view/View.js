@@ -5,7 +5,7 @@ class View extends Component {
   render() {
     return (
       <span className="View">
-        
+        View
       </span>
     );
   }

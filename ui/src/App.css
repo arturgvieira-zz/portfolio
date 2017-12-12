@@ -97,35 +97,24 @@
     right:0px;
     bottom: 0px;
     overflow-y:scroll;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 75px 500px;
-    grid-template-areas:
-        "d v"
-        "n v";
 }
 
 .App > .wrapper > .panel {
+    position: fixed;
     height: 400px;
+    width: 25%;
     border: none;
     border-left: 4px solid #555;
 }
 
-.App > .wrapper .dashboard {
-    grid-area: d;
-}
-
-.App > .wrapper .navigation {
-    grid-area: n;
-}
-
-.App > .wrapper .view {
-    grid-area: v;
+.App > .wrapper > .view {
+    width: 67.5%;
+    margin-left: 30%;
 }
 
 @media screen and (max-width: 1000px) {
-    .App > .wrapper {
-        grid-template-columns: 35% 65%;
+    .App > .wrapper > .panel {
+        width: 35%;
     }
 }
 
