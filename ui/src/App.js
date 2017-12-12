@@ -21,8 +21,7 @@ class App extends Component {
   }
     
   handleChange = (e) => {
-    this.setState({ url: this.state.url + e });
-    this.endpoint();
+    this.endpoint(this.state.url + e);
   }
 
   handleQuiet = () => {
@@ -37,8 +36,8 @@ class App extends Component {
     this.setState({ hidden: true });
   }
 
-  endpoint = () => {
-    fetch(this.state.url)
+  endpoint = (url) => {
+    fetch(url)
       .then(response => {
         return response.json();
       })
@@ -51,7 +50,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.endpoint();
+    this.endpoint(this.state.url);
   }
 
   render() {
