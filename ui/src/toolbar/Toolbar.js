@@ -10,8 +10,8 @@ class Toolbar extends Component {
     return (
       <div className="Toolbar">
         <section className="wrapper">
-          <span className="menu" onClick={this.props.handleClick}>
-            <img src={Menu} alt="Menu" />
+          <span className="menu">
+            <img src={Menu} alt="Menu" onClick={this.props.handleClick}/>
           </span>
           <span className="title"><Title/></span>
           <span className="links"><Links/></span>
