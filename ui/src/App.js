@@ -15,13 +15,15 @@ class App extends Component {
     this.state = {
       quiet: false,
       hidden: true,
-      url: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
+      default: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
+      url: '',
       view: null,
+      nav: null
     };
   }
     
   handleRequest = (e) => {
-    this.endpoint(this.state.url + e);
+    this.endpoint(this.state.default + e);
   }
 
   handleQuiet = () => {
@@ -42,7 +44,11 @@ class App extends Component {
         return response.json();
       })
       .then(json => {
-        this.setState({ view: json });
+        if(!this.state.nav){
+          this.setState({ view: json, nav: json });
+        }else {
+          this.setState({ view: json });
+        }
       })
       .catch(error => {
         this.setState({ view: "Something went wrong. Please try again later." });
@@ -50,7 +56,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.endpoint(this.state.url);
+    this.endpoint(this.state.default);
   }
 
   render() {
@@ -90,7 +96,7 @@ class App extends Component {
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>
             </div>
-            <div className="navigation"><Nav handleRequest={this.handleRequest} /></div>
+            <div className="navigation"><Nav view={this.state.nav} handleRequest={this.handleRequest} /></div>
           </section>
           <section className="view card">
             <View view={this.state.view} />

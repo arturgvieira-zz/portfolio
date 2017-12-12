@@ -19,34 +19,16 @@ app.use(cors());
 app.get('/', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/data");
+    var ref = db.ref("portfolio");
     ref.once("value", function(data) {
       res.json(data);
     });
 });
 
-app.get('/projects', function(req, res){
+app.get('/data/:param', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/data/projects");
-    ref.once("value", function(data) {
-      res.json(data);
-    });
-});
-
-app.get('/frameworks', function(req, res){
-    // Get a database reference
-    var db = admin.database();
-    var ref = db.ref("portfolio/data/frameworks");
-    ref.once("value", function(data) {
-      res.json(data);
-    });
-});
-
-app.get('/languages', function(req, res){
-    // Get a database reference
-    var db = admin.database();
-    var ref = db.ref("portfolio/data/languages");
+    var ref = db.ref("portfolio/data/" + req.params.param);
     ref.once("value", function(data) {
       res.json(data);
     });
