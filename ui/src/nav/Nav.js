@@ -6,7 +6,7 @@ class Nav extends Component {
   load = (obj) => {
     const temp = [];
     
-    const style = {
+    const div = {
       cursor: 'pointer',
       margin: '10px',
       padding: '5px 15px',
@@ -19,10 +19,12 @@ class Nav extends Component {
     }
     return temp.map( el => 
       (
-        <div 
+        <div
+        style={div}
         key={el} 
-        onClick={() => this.handleClick("data/" + el.toLowerCase())} 
-        style={style}>{el}</div>
+        onClick={() => this.handleClick("data/" + el.toLowerCase())}>
+          <a href="#view">{el}</a>
+        </div>
       )
     );
   }
