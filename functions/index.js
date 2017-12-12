@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 app.get('/projects', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/projects/title");
+    var ref = db.ref("portfolio/projects");
     ref.once("value", function(data) {
       res.json({ message: data});
     });
@@ -37,7 +37,7 @@ app.get('/projects', function(req, res){
 app.get('/frameworks', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/frameworks/title");
+    var ref = db.ref("portfolio/frameworks");
     ref.once("value", function(data) {
       res.json({ message: data});
     });
@@ -46,7 +46,7 @@ app.get('/frameworks', function(req, res){
 app.get('/languages', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/languages/title");
+    var ref = db.ref("portfolio/languages");
     ref.once("value", function(data) {
       res.json({ message: data});
     });
