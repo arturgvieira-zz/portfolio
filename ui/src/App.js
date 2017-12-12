@@ -69,7 +69,7 @@ class App extends Component {
       <div className="drawer">
         <div className="panel" onClick={this.handleClickAway}></div>
         <section className="container">
-          <span className="heading">Portfolio</span>
+          <span className="primary heading"><h3>Portfolio</h3></span>
           <a className="links" href="https://portfolio.arturgvieira.com">Home</a>
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
