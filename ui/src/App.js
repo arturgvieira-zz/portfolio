@@ -95,6 +95,7 @@ class App extends Component {
             <div className="navigation"><Nav view={this.state.nav} handleRequest={this.handleRequest} /></div>
           </section>
           <section className="view card">
+            <a name="view"> </a>
             <View view={this.state.view} />
           </section>
         </main>

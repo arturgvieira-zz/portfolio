@@ -6,7 +6,6 @@ class View extends Component {
     return this.props.view ?  
       (
         <div>
-          <a name="view"></a>
           <h3>{this.props.view.title}</h3>
           <p>{this.props.view.welcome}</p>
         </div>
