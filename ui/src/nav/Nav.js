@@ -10,7 +10,7 @@ class Nav extends Component {
         <div className="panel">
           <div className="item">
             <p>Projects</p>
-            {}
+            
           </div>
         </div>
       </div>

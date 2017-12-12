@@ -6,13 +6,29 @@ import View from './view/View.js';
 import Dashboard from './dashboard/Dashboard.js';
 import Nav from './nav/Nav.js';
 
+import 'whatwg-fetch';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       quiet: false,
       hidden: true,
+      view: null,
     };
+  }
+  
+  endpoint = () => {
+    fetch('https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/')
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        this.setState({ view: json.message });
+      })
+      .catch(error => {
+        this.setState({ view: "Something went wrong. Please try again later." });
+    });
   }
   
   handleChange = () => {
@@ -27,8 +43,11 @@ class App extends Component {
     this.setState({ hidden: true });
   }
 
+  componentDidMount() {
+    this.endpoint();
+  }
+
   render() {
-    
     const header = (
       <header className="header">
         <Toolbar handleClick={this.handleClick}/>
@@ -67,7 +86,7 @@ class App extends Component {
             </div>
             <div className="navigation"><Nav /></div>
           </section>
-          <section className="view card"><View /></section>
+          <section className="view card"><View message={this.state.view} /></section>
         </main>
       </div>
     );
