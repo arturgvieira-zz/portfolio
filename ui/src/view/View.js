@@ -4,8 +4,6 @@ import './View.css';
 import 'es6-promise';
 import fetch from 'isomorphic-fetch';
 
-import icon from './icon.svg';
-
 class View extends Component {
   constructor(props) {
     super(props);
