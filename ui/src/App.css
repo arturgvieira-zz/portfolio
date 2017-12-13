@@ -96,6 +96,7 @@
 .App .main .panel {
     position: fixed;
     width: 25%;
+    max-width: 400px;
     border: none;
     border-left: 4px solid #555;
 }
