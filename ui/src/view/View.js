@@ -32,10 +32,6 @@ class View extends Component {
     this.slider();
   }
   
-  componentWillUpdate() {
-    window.setTimeout(this.slider, 5000);
-  }
-  
   render() {
     const {src} = this.state;
     return (
@@ -47,7 +43,7 @@ class View extends Component {
             <div><p className="description">{this.props.view && this.props.view.description ? this.props.view.description : "I made this, its all in one way, shape or form my creativity. Also those things which, I have been influenced by."}</p></div>
           </div>
           <div className="content">
-          {this.props.view && this.props.view.data ? this.props.view.data : null }
+          {this.props.view && this.props.view.data ? this.props.load(this.props.view) : null }
           </div>
         </div>
       );
