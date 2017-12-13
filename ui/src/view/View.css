@@ -1,51 +1,19 @@
 .View {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .View .wrapper {
-    display: grid;
-    margin: 5px;
-    padding: 5px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 150px 75px 175px;
-    grid-template-areas:
-        "t t t t t . s s s . . ."
-        "w w w w w . s s s . . ."
-        "d d d d d . . . . . . .";
-}
-
-.View .title {
-    grid-area: t;
-}
-
-.View .welcome {
-    grid-area: w;
-}
-
-.View .description {
-    grid-area: d;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px;
 }
 
 .View .slider {
-    grid-area: s;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
-@media screen and (max-width: 1000px) {
-    .View .wrapper {
-        grid-template-rows: 85px 75px 175px;
-        grid-template-areas:
-        "t t t t t . s s s . . ."
-        "w w w w w w w . . . . ."
-        "d d d d d d d d d . . .";
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .View .wrapper {
-        grid-template-rows: 95px 75px 175px;
-        grid-template-areas:
-        "t t t t t . s s s s s s"
-        "w w w w w w w . . . . ."
-        "d d d d d d d d d . . .";
-    }
-}

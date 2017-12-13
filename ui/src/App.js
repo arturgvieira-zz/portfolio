@@ -118,7 +118,7 @@ class App extends Component {
       <div className="App">
         {this.state.quiet ? snippet : header}
         {this.state.hidden ? null : drawer}
-        <main className="content">
+        <main className="main">
           <section className="panel card">
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>

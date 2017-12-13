@@ -82,7 +82,7 @@
     background-color: #f1f1f1;
 }
 
-.App .content {
+.App .main {
     max-width: 1500px;
     margin: 0 auto;
     position:absolute;
@@ -93,25 +93,25 @@
     overflow-y:scroll;
 }
 
-.App .content .panel {
+.App .main .panel {
     position: fixed;
     width: 25%;
     border: none;
     border-left: 4px solid #555;
 }
 
-.App .content .view {
+.App .main .view {
     display: flex;
     align-items: flex-end;
     margin-left: 30%;
 }
 
 @media screen and (max-width: 1000px) {
-    .App .content .panel {
+    .App .main .panel {
         width: 30%;
     }
     
-    .App .content .view {
+    .App .main .view {
         margin-left: 42.5%;
     }
 }
@@ -121,15 +121,15 @@
         display: none;
     }
     
-    .App .content {
+    .App .main {
         top: 90px;
     }
     
-    .App .content .panel {
+    .App .main .panel {
         display:none;
     }
     
-    .App .content .view {
+    .App .main .view {
         margin: 5px;
     }
 }

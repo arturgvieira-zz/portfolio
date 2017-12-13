@@ -14,12 +14,12 @@ class View extends Component {
   
   slider() {
     let array = []; 
-    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/resources")
+    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/resources/")
       .then(response => {
         return response.json();
       })
       .then(json => {
-        Object.entries(json).forEach(([key, value]) => { array.push(value); });
+        Object.entries(json).forEach(([key, value]) => array.push(value));
         const random = Math.floor((Math.random() * array.length) + 1);
         this.setState({ src : array[random - 1]});
       })
@@ -32,26 +32,22 @@ class View extends Component {
     this.slider();
   }
   
+  componentWillUpdate() {
+    window.setTimeout(this.slider, 5000);
+  }
   
   render() {
     const {src} = this.state;
-    return this.props.view ?  
-      (
-        <div className="View">
-          <h1>{this.props.view.title ? this.props.view.title : null}</h1>
-          <h3>{this.props.view.welcome ? this.props.view.welcome : null}</h3>
-          <p>{this.props.view.description ? this.props.view.description : null}</p>
-          {this.props.view.data !== 'null' ? this.props.load(this.props.view) : null}
-        </div>
-      )
-    :
-      (
+    return (
         <div className="View">
           <div className="wrapper">
-            <h1 className="title">Portfolio</h1>
-            <h3 className="welcome">Welcome to my Portfolio!</h3>
-            <p className="description">I made this, its all in one way, shape or form my creativity. Also those things which, I have been influenced by.</p>
-            <img className="slider" src={src} alt="Slider"/>
+            <div><h1 className="title">{this.props.view && this.props.view.title ? this.props.view.title : "Portfolio"}</h1></div>
+            <div><img className="slider" src={src} alt="Slider"/></div>
+            <div><h3 className="welcome">{this.props.view && this.props.view.welcome ? this.props.view.welcome : "Welcome to my Portfolio"}</h3></div>
+            <div><p className="description">{this.props.view && this.props.view.description ? this.props.view.description : "I made this, its all in one way, shape or form my creativity. Also those things which, I have been influenced by."}</p></div>
+          </div>
+          <div className="content">
+          {this.props.view && this.props.view.data ? this.props.view.data : null }
           </div>
         </div>
       );
