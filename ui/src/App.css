@@ -83,6 +83,8 @@
 }
 
 .App .content {
+    max-width: 1500px;
+    margin: 0 auto;
     position:absolute;
     top: 110px;
     left:0px;

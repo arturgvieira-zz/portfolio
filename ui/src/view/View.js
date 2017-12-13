@@ -51,7 +51,7 @@ class View extends Component {
             <h1 className="title">Portfolio</h1>
             <h3 className="welcome">Welcome to my Portfolio!</h3>
             <p className="description">I made this, its all in one way, shape or form my creativity. Also those things which, I have been influenced by.</p>
-            <div className="slider" style={{ background: "url(" + src + ") no-repeat center" }}></div>
+            <img className="slider" src={src} alt="Slider"/>
           </div>
         </div>
       );

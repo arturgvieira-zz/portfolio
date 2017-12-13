@@ -38,7 +38,7 @@ app.get('/data/:parent/:child', function(req, res){
 app.get('/resources', function(req, res){
     // Get a database reference
     var db = admin.database();
-    var ref = db.ref("portfolio/resources/");
+    var ref = db.ref("portfolio/resources");
     ref.orderByKey().once("value", function(data) {
       res.json(data);
     });

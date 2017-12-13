@@ -7,11 +7,11 @@
     margin: 5px;
     padding: 5px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 60px 75px 175px;
+    grid-template-rows: 150px 75px 175px;
     grid-template-areas:
-        "t t t t t . . . s s s s"
-        "w w w w w . . . s s s s"
-        "d d d d d d . . s s s s";
+        "t t t t t . s s s . . ."
+        "w w w w w . s s s . . ."
+        "d d d d d . . . . . . .";
 }
 
 .View .title {
@@ -28,4 +28,24 @@
 
 .View .slider {
     grid-area: s;
+}
+
+@media screen and (max-width: 1000px) {
+    .View .wrapper {
+        grid-template-rows: 85px 75px 175px;
+        grid-template-areas:
+        "t t t t t . s s s . . ."
+        "w w w w w w w . . . . ."
+        "d d d d d d d d d . . .";
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .View .wrapper {
+        grid-template-rows: 95px 75px 175px;
+        grid-template-areas:
+        "t t t t t . s s s s s s"
+        "w w w w w w w . . . . ."
+        "d d d d d d d d d . . .";
+    }
 }
