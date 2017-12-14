@@ -118,10 +118,6 @@
 }
 
 @media screen and (max-width: 500px) {
-    .App .breadcrumbs {
-        display: none;
-    }
-    
     .App .main {
         top: 90px;
     }

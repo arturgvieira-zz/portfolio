@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Breadcrumbs from './breadcrumbs/Breadcrumbs.js';
+
 import Toolbar from './toolbar/Toolbar.js';
 import View from './view/View.js';
 import Dashboard from './dashboard/Dashboard.js';
@@ -84,15 +84,14 @@ class App extends Component {
     }
   }
   
-  componentDidMount() {
-    this.endpoint(this.state.default);
-  }
+  // componentDidMount() {
+  //   this.endpoint(this.state.default);
+  // }
 
   render() {
     const header = (
       <header className="header">
         <Toolbar handleClick={this.handleClick}/>
-        <div className="breadcrumbs"><Breadcrumbs /></div>
       </header>
     );
     
