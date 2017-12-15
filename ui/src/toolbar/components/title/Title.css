@@ -2,3 +2,10 @@
     font-size: 25px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 500px) {
+    .Title {
+        font-size: 15px;
+        padding-top: 10px;
+    }
+}

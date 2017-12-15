@@ -113,15 +113,11 @@
     }
     
     .App .main .view {
-        margin-left: 42.5%;
+        margin-left: 38%;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .App .main {
-        top: 84px;
-    }
-    
     .App .main .panel {
         display:none;
     }
