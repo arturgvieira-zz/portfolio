@@ -5,7 +5,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="container">
-        {this.props.load(this.props.nav)}
+        {this.props.menu}
       </div>
     );
   }

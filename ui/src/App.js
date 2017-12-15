@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       quiet: false,
       hidden: true,
-      default: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
+      endpoint: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
       url: '',
       view: null,
       nav: null
@@ -23,7 +23,7 @@ class App extends Component {
   }
     
   handleRequest = (e) => {
-    this.endpoint(this.state.default + 'data/' + e);
+    this.endpoint(this.state.endpoint + 'criteria/' + e);
   }
 
   handleQuiet = () => {
@@ -56,8 +56,7 @@ class App extends Component {
   }
   
   load = (obj) => {
-    const temp = [];
-    
+
     const div = {
       cursor: 'pointer',
       margin: '15px',
@@ -66,15 +65,13 @@ class App extends Component {
     };
     
     if(obj){
-      Object.entries(obj.data).forEach(([key, value]) => {
-        temp.push(value.title);
-      });
-      return temp.map( el => 
+      return obj.map( el => 
         (
           <div
           style={div}
-          key={el} 
-          onClick={() => this.handleRequest((obj.title + "/" + el).toLowerCase())}>
+          key={el}
+          aria-haspopup="true"
+          onClick={() => this.handleRequest(el)}>
             {el}
           </div>
         )
@@ -84,9 +81,9 @@ class App extends Component {
     }
   }
   
-  // componentDidMount() {
-  //   this.endpoint(this.state.default);
-  // }
+  componentDidMount() {
+    this.endpoint(this.state.endpoint);
+  }
 
   render() {
     const header = (
@@ -122,7 +119,7 @@ class App extends Component {
             <div className="dashboard">
               <Dashboard handleClick={this.handleQuiet}/>
             </div>
-            <div className="navigation"><Nav load={this.load} nav={this.state.nav} /></div>
+            <div className="navigation"><Nav menu={this.load(this.state.nav)} /></div>
           </section>
           <section className="view card">
             <View load={this.load} view={this.state.view} />

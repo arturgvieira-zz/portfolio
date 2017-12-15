@@ -13,24 +13,22 @@ class View extends Component {
   }
   
   randomResource = () => {
-    let array = []; 
-    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/resources/")
+    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/document/data")
       .then(response => {
         return response.json();
       })
       .then(json => {
-        Object.entries(json).forEach(([key, value]) => array.push(value));
-        const random = Math.floor((Math.random() * array.length) + 1);
-        this.setState({ src : array[random - 1]});
+        const random = Math.floor((Math.random() * json.resources.length) + 1);
+        this.setState({ src : json.resources[random - 1]});
       })
       .catch(error => {
         alert("Something went wrong. Please try again later.");
     });
   }
   
-  // componentDidMount() {
-  //   this.randomResource();
-  // }
+  componentDidMount() {
+    this.randomResource();
+  }
   
   render() {
     const {src} = this.state;
@@ -40,15 +38,15 @@ class View extends Component {
             <div><h1 className="title">Portfolio</h1></div>
             <div><h3 className="welcome">Welcome to my Portfolio</h3></div>
             <div className="figure">
-              <img className="hero" src={src} alt="Header"/>
+              <div className="hero" style={{ "backgroundImage": "url(" + src + ")"}}></div>
               <p>I made this, its all in one way, shape or form my creativity. Also those things which, I have been influenced by.</p>
             </div>
           </div>
           <div className="display">
-            <div><h2 className="section">{this.props.view && this.props.view.title ? this.props.view.title : null}</h2></div>
-            <div><h4 className="info">{this.props.view && this.props.view.welcome ? this.props.view.welcome : null}</h4></div>
-            <div>{this.props.view && this.props.view.description ? this.props.view.description : null}</div>
-            <div className="content">{this.props.view && this.props.view.data ? this.props.load(this.props.view) : null }</div>
+            <div><h2 className="section">{this.props.view && this.props.view.info.title ? this.props.view.info.title : null}</h2></div>
+            <div><h4 className="info">{this.props.view && this.props.view.info.subtitle ? this.props.view.info.subtitle : null}</h4></div>
+            <div><p>{this.props.view && this.props.view.info.description ? this.props.view.info.description : null}</p></div>
+            <div className="content">{this.props.view && this.props.view.data ? this.props.load(this.props.view.data) : null }</div>
           </div>
         </div>
       );

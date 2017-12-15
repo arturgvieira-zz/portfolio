@@ -4,7 +4,7 @@ import './Title.css';
 class Title extends Component {
   render() {
     return (
-      <div className="Title">Portfolio</div>
+      <div className="Title">Artur G. Vieira</div>
     );
   }
 }

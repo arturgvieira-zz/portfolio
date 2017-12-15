@@ -12,7 +12,7 @@ class Toolbar extends Component {
         <section className="container">
           <div className="panel container" >
             <div className="menu">
-              <img src={Menu} alt="Menu" onClick={this.props.handleClick}/>
+              <img src={Menu} alt="Menu" onClick={this.props.handleClick} aria-haspopup="true"/>
             </div>
             <div className="title"><Title/></div>
           </div>
