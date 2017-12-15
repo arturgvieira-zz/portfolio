@@ -41,7 +41,7 @@ app.get('/document/:id', function(req, res){
 
 app.get('/criteria/:criteria', function(req, res){
     db.collection("portfolio")
-    .where(req.params.criteria.toLowerCase(), "==", true).get()
+    .where("tags." + req.params.criteria.toLowerCase(), "==", true).get()
     .then((snapshot) => {
         const response = {
             info: null,
