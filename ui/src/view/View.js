@@ -42,7 +42,7 @@ class View extends Component {
               <div className="hero" style={{ "backgroundImage": "url(" + src + ")"}}></div>
             </div>
           </div>
-          <Content/>
+          <Content content={this.props.content}/>
         </div>
       );
   }

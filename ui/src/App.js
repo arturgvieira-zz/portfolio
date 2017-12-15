@@ -16,8 +16,7 @@ class App extends Component {
     this.state = {
       quiet: false,
       hidden: true,
-      endpoint: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
-      nav: null
+      content: null
     };
   }
 
@@ -33,45 +32,95 @@ class App extends Component {
     this.setState({ hidden: true });
   }
 
-  endpoint = (url) => {
-    fetch(url)
+  endpoint = () => {
+    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/")
       .then(response => {
         return response.json();
       })
       .then(json => {
-        this.setState({ nav: json });
+        json.sort((x, y) => 
+          x.tags.level < y.tags.level ? -1 :
+            x.tags.level > y.tags.level ? 1 : 
+              x.tags.heading === true ? -1 : 
+                y.tags.heading === true ? 1 : 0
+        );
+        this.setState({ content : json });
       })
       .catch(error => {
-        this.setState({ view: "Something went wrong. Please try again later." });
+        alert("Something went wrong. Please try again later.");
     });
   }
   
-  nav = (obj) => {
-
-    const anchor = {
-      cursor: 'pointer',
-      margin: '15px',
-      padding: '5px 15px',
-      textDecoration: "none"
-    };
-    
-    if(obj){
-      return obj.map( el => 
-        (
-          <a style={anchor} href={"#" + el}>
-            <p key={el} aria-haspopup="true">
-              {el}
-            </p>
-          </a>
+  nav = {
+    short: (obj) => {
+      const anchor = {
+        cursor: 'pointer',
+        margin: '15px',
+        padding: '5px 25px',
+        textDecoration: "none"
+      };
+      
+      if(obj){
+        return obj.filter(x => x.tags.heading === true).map( el =>
+          (
+            <div>
+            <a style={anchor} href={"#" + el}>
+              <h3 key={el} aria-haspopup="true">
+                {el}
+              </h3>
+            </a>
+            </div>
+          )
         )
-      );
-    }else {
-      return null;
+      }else {
+        return null;
+      }
+    },
+    full: (obj) => {
+      const anchor = {
+        cursor: 'pointer',
+        margin: '15px',
+        padding: '5px 15px',
+        textDecoration: "none"
+      };
+      
+      const subanchor = {
+        cursor: 'pointer',
+        margin: '15px',
+        padding: '5px 45px',
+        textDecoration: "none"
+      };
+      
+      if(obj){
+        return obj.filter(x => x.tags.heading === true).map( x =>
+          (
+            <div>
+            <a style={anchor} href={"#" + x}>
+              <h3 key={x} aria-haspopup="true">
+                {x}
+              </h3>
+            </a>
+            <ul>
+              { obj.filter(y => y.tags.heading === false)
+                   .filter(y => y.tags.level === x.tags.level)
+                   .map( z => 
+                      <a style={subanchor} href={"#" + z}>
+                        <h3 key={z} aria-haspopup="true">
+                          {z}
+                        </h3>
+                      </a>
+                    )   
+              }
+            </ul>
+            </div>
+          )
+        )
+      }
     }
   }
   
   componentDidMount() {
-    this.endpoint(this.state.endpoint);
+    this.endpoint();
   }
 
   render() {
@@ -94,7 +143,7 @@ class App extends Component {
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
           <span className="heading"><h3>Dashboard</h3></span>
-          {this.nav(this.state.nav)}
+          {this.nav.short(this.state.content)}
         </section>
       </div>
     );
@@ -109,11 +158,11 @@ class App extends Component {
               <div className="dashboard">
                 <Dashboard handleClick={this.handleQuiet}/>
               </div>
-              <div className="navigation"><Nav menu={this.nav(this.state.nav)} /></div>
+              <div className="navigation"><Nav menu={this.nav.full(this.state.content)} /></div>
             </Menu>
           </section>
           <section className="view card">
-            <View/>
+            <View content={this.state.content}/>
           </section>
         </main>
       </div>

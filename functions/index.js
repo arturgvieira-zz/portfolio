@@ -16,20 +16,6 @@ const app = express();
 app.use(cors());
 
 app.get('/', function(req, res){
-    db.collection("portfolio").where("tags.menu", "==", true).get()
-    .then((snapshot) => {
-        const response = [];
-        snapshot.forEach(doc => {
-            response.push(doc.data().title);
-        });
-        res.json(response);
-    })
-    .catch((err) => {
-        console.log('Error getting documents', err);
-    });
-});
-
-app.get('/documents', function(req, res){
     db.collection("portfolio").where("tags.content", "==", true).get()
     .then((snapshot) => {
         const response = [];

@@ -2,32 +2,6 @@ import React, { Component } from 'react';
 import './Content.css';
 
 class Content extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: null
-    };
-  }
-  
-  endpoint = () => {
-    fetch("https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/documents")
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        json.sort((x, y) => 
-          x.tags.level < y.tags.level ? -1 :
-            x.tags.level > y.tags.level ? 1 : 
-              x.tags.heading === true ? -1 : 
-                y.tags.heading === true ? 1 : 0
-        );
-        this.setState({ content : json });
-      })
-      .catch(error => {
-        alert("Something went wrong. Please try again later.");
-    });
-  }
-  
   content = (obj) => {
 
     const div = {
@@ -60,14 +34,10 @@ class Content extends Component {
     }
   }
   
-  componentDidMount() {
-    this.endpoint();
-  }
-  
   render() {
     return (
       <div className="Content">
-        { !this.state.content ? null : this.content(this.state.content)}
+        { !this.props.content ? null : this.content(this.props.content)}
       </div>
     );
   }
