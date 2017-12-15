@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Toolbar from './toolbar/Toolbar.js';
+import Menu from './menu/Menu.js';
+import Dashboard from './menu/components/dashboard/Dashboard.js';
+import Nav from './menu/components/nav/Nav.js';
 import View from './view/View.js';
-import Dashboard from './dashboard/Dashboard.js';
-import Nav from './nav/Nav.js';
 
 import 'es6-promise';
 import fetch from 'isomorphic-fetch';
@@ -16,14 +17,8 @@ class App extends Component {
       quiet: false,
       hidden: true,
       endpoint: 'https://us-central1-portfolio-arturgvieira.cloudfunctions.net/api/',
-      url: '',
-      view: null,
       nav: null
     };
-  }
-    
-  handleRequest = (e) => {
-    this.endpoint(this.state.endpoint + 'criteria/' + e);
   }
 
   handleQuiet = () => {
@@ -44,36 +39,30 @@ class App extends Component {
         return response.json();
       })
       .then(json => {
-        if(!this.state.nav){
-          this.setState({ nav: json });
-        }else {
-          this.setState({ view: json });
-        }
+        this.setState({ nav: json });
       })
       .catch(error => {
         this.setState({ view: "Something went wrong. Please try again later." });
     });
   }
   
-  load = (obj) => {
+  nav = (obj) => {
 
-    const div = {
+    const anchor = {
       cursor: 'pointer',
       margin: '15px',
       padding: '5px 15px',
-      color: '#2196f3',
+      textDecoration: "none"
     };
     
     if(obj){
       return obj.map( el => 
         (
-          <div
-          style={div}
-          key={el}
-          aria-haspopup="true"
-          onClick={() => this.handleRequest(el)}>
-            {el}
-          </div>
+          <a style={anchor} href={"#" + el}>
+            <p key={el} aria-haspopup="true">
+              {el}
+            </p>
+          </a>
         )
       );
     }else {
@@ -105,7 +94,7 @@ class App extends Component {
           <a className="links" href="https://arturgvieira.com">Website</a>
           <a className="links" href="https://arturgvieira.quip.com">Hire</a>
           <span className="heading"><h3>Dashboard</h3></span>
-          {this.load(this.state.nav)}
+          {this.nav(this.state.nav)}
         </section>
       </div>
     );
@@ -116,13 +105,15 @@ class App extends Component {
         {this.state.hidden ? null : drawer}
         <main className="main">
           <section className="panel card">
-            <div className="dashboard">
-              <Dashboard handleClick={this.handleQuiet}/>
-            </div>
-            <div className="navigation"><Nav menu={this.load(this.state.nav)} /></div>
+            <Menu>
+              <div className="dashboard">
+                <Dashboard handleClick={this.handleQuiet}/>
+              </div>
+              <div className="navigation"><Nav menu={this.nav(this.state.nav)} /></div>
+            </Menu>
           </section>
           <section className="view card">
-            <View load={this.load} view={this.state.view} />
+            <View/>
           </section>
         </main>
       </div>

@@ -16,13 +16,27 @@ const app = express();
 app.use(cors());
 
 app.get('/', function(req, res){
-    db.collection("portfolio").where("menu", "==", true).get()
+    db.collection("portfolio").where("tags.menu", "==", true).get()
     .then((snapshot) => {
-        const temp = [];
+        const response = [];
         snapshot.forEach(doc => {
-            temp.push(doc.data().title);
+            response.push(doc.data().title);
         });
-        res.json(temp);
+        res.json(response);
+    })
+    .catch((err) => {
+        console.log('Error getting documents', err);
+    });
+});
+
+app.get('/documents', function(req, res){
+    db.collection("portfolio").where("tags.content", "==", true).get()
+    .then((snapshot) => {
+        const response = [];
+        snapshot.forEach(doc => {
+            response.push(doc.data());
+        });
+        res.json(response);
     })
     .catch((err) => {
         console.log('Error getting documents', err);
@@ -43,18 +57,18 @@ app.get('/criteria/:criteria', function(req, res){
     db.collection("portfolio")
     .where(req.params.criteria.toLowerCase(), "==", true).get()
     .then((snapshot) => {
-        const temp = {
+        const response = {
             info: null,
             data: []
         };
         snapshot.forEach(doc => {
             if(doc.data().title == req.params.criteria){
-                temp.info = doc.data();
+                response.info = doc.data();
             }else {
-                temp.data.push(doc.data().title);
+                response.data.push(doc.data().title);
             }
         });
-        res.json(temp);
+        res.json(response);
     })
     .catch((err) => {
         console.log('Error getting documents', err);
