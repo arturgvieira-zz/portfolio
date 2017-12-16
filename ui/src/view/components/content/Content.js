@@ -22,11 +22,12 @@ class Content extends Component {
             ) 
             : 
             (
-              <div><h3 className="section">{el.title}</h3><div className="item"></div></div>
+              <div><h3 className="section">{el.title}</h3></div>
             ) 
             }
             <div><h4 className="info">{el.subtitle}</h4></div>
             <div><p>{el.description}</p></div>
+            <div className="flex">{el.data ? el.data.map( item => (<p>{item}</p>)) : null}</div>
           </div>
         ));
     }else {

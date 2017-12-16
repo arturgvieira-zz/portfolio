@@ -83,13 +83,22 @@ class App extends Component {
       if(obj){
         return obj.map( b => 
           (
-              <div>
-                <a style={anchor} href={"#" + b.title} aria-haspopup="true">
-                  <h3 key={b.title}>
+            <a className="item" style={anchor} href={"#" + b.title} aria-haspopup="true">
+              { 
+                b.tags.heading ? 
+                (
+                  <h2 key={b.title}>
                     {b.title}
-                  </h3>
-                </a>
-              </div>
+                  </h2>
+                ) 
+                : 
+                (
+                  <h4 key={b.title}>
+                    {b.title}
+                  </h4>
+                )
+              }
+            </a>
           )
         )
       }else {

@@ -5,8 +5,15 @@
     padding: 5px 15px;
 }
 
-.Nav .item {
-    background: #f1f1f1;
+.Nav .item, .Nav .tem:hover, .Nav .item:visited {
+    color: #007eff;
+}
+
+.Nav .item h2 {
     padding-bottom: 4px;
     border-bottom: 1px solid #0069c0;
+}
+
+.Nav .item h4 {
+    color: #555;
 }
